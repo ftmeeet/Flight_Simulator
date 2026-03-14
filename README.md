@@ -1,6 +1,6 @@
 # Beaver DHC-2 Flight Simulator in MATLAB & Simulink
 
-This project is a high-fidelity flight simulator for the **De Havilland Canada DHC-2 Beaver** aircraft, developed entirely within the MATLAB and Simulink environment. It implements a full 12-Degree-of-Freedom (12-DOF) non-linear dynamic model to simulate the aircraft's motion and provides real-time visualization through an integration with the open-source flight simulator, **FlightGear**.
+This project is a high-fidelity flight simulator for the **De Havilland Canada DHC-2 Beaver** aircraft, developed entirely within the MATLAB and Simulink environment. It implements a full 6-Degree-of-Freedom (6-DOF) non-linear dynamic model to simulate the aircraft's motion and provides real-time visualization through an integration with the open-source flight simulator, **FlightGear**.
 
 The core of this project was developed as a mini-project for the Aeronautical Engineering program at SVIT, Gujarat Technological University.
 
