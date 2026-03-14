@@ -6,7 +6,7 @@ The core of this project was developed as a mini-project for the Aeronautical En
 
 ## Key Features
 
--   **High-Fidelity 12-DOF Model:** Implements the complete set of 12 non-linear ordinary differential equations (ODEs) for rigid-body aircraft dynamics.
+-   **High-Fidelity 6-DOF Model:** Implements the complete set of 6 non-linear ordinary differential equations (ODEs) for rigid-body aircraft dynamics.
 -   **Data-Driven Simulation:** Utilizes detailed aerodynamic coefficients, mass properties, and engine data specific to the DHC-2 Beaver aircraft, based on established thesis research.
 -   **Real-Time Visualization:** Connects seamlessly with FlightGear to provide an immersive, real-time 3D visualization of the aircraft's state (position, orientation, and motion).
 -   **Interactive Controls:** The Simulink model allows for real-time input from the user (via sliders for elevator, aileron, and rudder) to control the aircraft during simulation.
@@ -16,14 +16,14 @@ The core of this project was developed as a mini-project for the Aeronautical En
 
 The simulator is built on a modular architecture that separates the physics engine from the visualization layer:
 
-1.  **MATLAB (`odefun5.m`):** The core physics engine is a MATLAB function that defines the 12 state derivatives. It takes the current state of the aircraft and control inputs, calculates the forces and moments using the DHC-2's aerodynamic data, and returns the time rate of change for each state variable.
+1.  **MATLAB (`odefun5.m`):** The core physics engine is a MATLAB function that defines the 6 state derivatives. It takes the current state of the aircraft and control inputs, calculates the forces and moments using the DHC-2's aerodynamic data, and returns the time rate of change for each state variable.
 2.  **Simulink (`beaver_simulator.slx`):** Simulink acts as the integration hub. It uses an ODE solver (`ode45`) to integrate the state derivatives from the MATLAB function over time. It also houses the user interface blocks for pilot commands and sends the final state data to FlightGear.
 3.  **FlightGear:** This open-source simulator acts as the graphical front-end. It receives the aircraft's position (latitude, longitude, altitude) and orientation (phi, theta, psi) from the Simulink Aerospace Blockset and renders the DHC-2 model in a 3D environment.
 
 
-## The Physics: 12-DOF Equations of Motion
+## The Physics: 6-DOF Equations of Motion
 
-The simulation accurately models the aircraft's flight by solving 12 coupled non-linear ODEs. The state vector `X` represents the complete status of the aircraft at any given time:
+The simulation accurately models the aircraft's flight by solving 6 coupled non-linear ODEs. The state vector `X` represents the complete status of the aircraft at any given time:
 
 `X = [p, q, r, u, v, w, φ, θ, ψ, x, y, z]`
 
